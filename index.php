@@ -35,7 +35,7 @@
 
             <tr>
                 <td><?= $n ?></td>
-                <td><img src="images/<?= $siswa['foto']?>" alt="" width="100" height="100"></td>
+                <td><img src="<?= $siswa['foto']?>" alt="" width="100" height="100"></td>
                 <td><?= $siswa['nis'] ?></td>
                 <td><?= $siswa['nama'] ?></td>
                 <td><?= $siswa['jenis_kelamin'] ?></td>

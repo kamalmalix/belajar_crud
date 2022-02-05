@@ -15,13 +15,13 @@
             $tmp = $_FILES['foto']['tmp_name'];
 
             //rename nama foto dengan menambahkan tanggal & jam upload
-            $fotonew = date('dmYHis').$foto;
+            $new_foto = md5(rand()).str_replace(" ", "", basename($foto));
 
             //set path folder penyimpanan fotonya
-            $path = "images/".$fotonew;
+            $path = "images/".$new_foto;
 
             if(move_uploaded_file($tmp,$path)){
-                $sql = "INSERT INTO siswa(nis, nama, jenis_kelamin, telp, alamat, foto) VALUES ('$nis', '$nama', '$jk', '$telp', '$alamat', '$fotonew')";
+                $sql = "INSERT INTO siswa(nis, nama, jenis_kelamin, telp, alamat, foto) VALUES ('$nis', '$nama', '$jk', '$telp', '$alamat', '$path')";
                 $query = mysqli_query($db,$sql);
 
                 if($query){

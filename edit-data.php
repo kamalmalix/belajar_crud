@@ -32,7 +32,7 @@
     <form action="proses-edit.php" method="POST" enctype="multipart/form-data">
         
         <input type="hidden" name="id" value="<?= $siswa['id']?>">
-        <input type="hidden" name="foto_lama" value="<?= $siswa['foto']?>">
+        <input type="text" name="foto_lama" value="<?= $siswa['foto']?>">
 
         <p>
             <label for="nis">NIS</label>
@@ -63,7 +63,7 @@
 
         <p>
             <label for="foto">Foto</label>
-            <img src="images/<?= $siswa['foto']?>" alt="" width="100" height="100">
+            <img src="<?= $siswa['foto']?>" alt="" width="100" height="100">
             <input type="file" name="foto" id="foto" placeholder="">
         </p>
 
