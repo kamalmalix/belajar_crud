@@ -13,7 +13,7 @@ if(isset($_POST['save'])){
        try {
             $base_dir = realpath($_SERVER["DOCUMENT_ROOT"]);
 
-            unlink($base_dir.'/'.$_POST['foto_lama']);
+            unlink($_POST['foto_lama']);
 
             $new_foto = md5(rand()).str_replace(" ", "",$_FILES["foto"]["name"]);
 
