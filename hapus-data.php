@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
     if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);
         $foto = $row['foto'];
-        unlink('images/'.$foto);
+        unlink($foto);
         $sql = "DELETE FROM siswa WHERE id = $id";
         if(mysqli_query($db, $sql)){
             header('Location: list-siswa.php');
